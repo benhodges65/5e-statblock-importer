@@ -100,41 +100,48 @@ export const KnownCreatureTypes = [
 export class CreatureData {
     constructor(name) {
         this.name = name;                           // string
-        this.actions = [];                          // NameValueData[]
-        this.armor = null;                          // ArmorData
-        this.abilities = [];                        // NameValueData[]
-        this.alignment = null;                      // string
-        this.bonusActions = [];                     // NameValueData[]
-        this.challenge = null;                      // ChallengeData
-        this.features = [];                         // NameValueData[]
-        this.health = null;                         // RollData
-        this.language = null;                       // LanguageData
-        this.lairActions = [];                      // NameValueData[]
-        this.legendaryActions = [];                 // NameValueData[]
-        this.mythicActions = [];                    // NameValueData[]
-        this.reactions = [];                        // NameValueData[]
-        this.role = null;                           // string           (MCDM)
-        this.savingThrows = [];                     // string[]
-        this.senses = [];                           // NameValueData[]
-        this.specialSense = null;                   // string
-        this.skills = [];                           // NameValueData[]
-        this.speeds = [];                           // NameValueData[]
-        this.spellcasting = [];                     // NameValueData[]
-        this.innateSpellcasting = [];               // NameValueData[]
         this.size = null;                           // string
-        this.souls = null;                          // RollData
-        this.race = null;                           // string
         this.type = null;                           // string
-        this.utilitySpells = [];                    // NameValueData[]  (MCDM)
-        this.villainActions = [];                   // NameValueData[]  (MCDM)
-        this.standardConditionImmunities = [];      // string[]
-        this.standardDamageImmunities = [];         // string[]
-        this.standardDamageResistances = [];        // string[]
-        this.standardDamageVulnerabilities = [];    // string[]
-        this.specialConditionImmunities = null;     // string
-        this.specialDamageImmunities = null;        // string
-        this.specialDamageResistances = null;       // string
-        this.specialDamageVulnerabilities = null;   // string
+        this.alignment = null;                      // string
+        this.armor_class = null;                    // int
+        this.armor_desc = null;                     // string
+        this.hit_points = null;                     // int
+        this.hit_dice = null;                       // string
+        this.speed_json = null;                     // string
+        this.strength = null;                       // int
+        this.dexterity = null;                      // int
+        this.constitution = null;                   // int
+        this.intelligence = null;                   // int
+        this.wisdom = null;                         // int
+        this.charisma = null;                       // int
+        this.strength_save = null;                  // int
+        this.dexterity_save = null;                 // int
+        this.constitution_save = null;              // int
+        this.intelligence_save = null;              // int
+        this.wisdom_save = null;                    // int
+        this.charisma_save = null;                  // int
+        this.perception = null;                     // int
+        this.skills_json = null;                    // string
+        this.damage_vulnerabilities = null;         // string
+        this.damage_resistances = null;             // string
+        this.damage_immunities = null;              // string
+        this.condition_immunities = null;           // string
+        this.senses = null;                         // string
+        this.languages = null;                      // string
+        this.challenge_rating = null;               // string
+        this.cr = null;                             // int
+        this.actions_json = [];                     // NameValueData[]
+        this.bonus_actions_json = [];               // NameValueData[]
+        this.reactions_json = [];                   // NameValueData[]
+        this.legendary_desc = null;                 // string
+        this.legendary_actions_json = [];           // NameValueData[]
+        this.spells_json = [];                      // NameValueData[]
+        this.special_abilities_json = [];           // NameValueData[]
+        this.desc = false;                          // boolean
+        this.document = null;                       // string
+        this.created_at = null;                     // string
+        this.page_no = null;                        // string
+        this.group = null;                          // string
     }
 }
 
@@ -143,52 +150,8 @@ name: string
 value: object
 */
 export class NameValueData {
-    constructor(name, value) {
+    constructor(name, description) {
         this.name = name;
-        this.value = value;
-    }
-}
-
-/*
-ac: int
-types: string[]
-*/
-export class ArmorData {
-    constructor(ac, types) {
-        this.ac = ac;
-        this.types = types || [];
-    }
-}
-
-/*
-cr: int
-xp: int
-*/
-export class ChallengeData {
-    constructor(cr, xp) {
-        this.cr = cr;
-        this.xp = xp;
-    }
-}
-
-/*
-value: int
-diceFormula: string
-*/
-export class RollData {
-    constructor(value, diceFormula) {
-        this.value = value;
-        this.formula = diceFormula;
-    }
-}
-
-/*
-knownLanguages: string[]
-unknownLanguages: string[]
-*/
-export class LanguageData {
-    constructor(knownLanguages, unknownLanguages) {
-        this.knownLanguages = knownLanguages;
-        this.unknownLanguages = unknownLanguages;
+        this.description = description;
     }
 }
